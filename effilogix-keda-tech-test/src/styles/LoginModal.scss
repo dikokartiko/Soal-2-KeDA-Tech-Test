@@ -1,0 +1,43 @@
+// File: LoginModal.scss
+
+// File: LoginModal.scss
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+.modal-content {
+  animation-name: flipInX;
+  animation-duration: 0.75s;
+}
+
+.text-center {
+  a {
+    color: #007bff; // Warna ini untuk meniru tampilan link Bootstrap, sesuaikan sesuai keinginan.
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

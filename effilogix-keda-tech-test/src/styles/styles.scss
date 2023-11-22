@@ -1,0 +1,321 @@
+// Variabel
+// --------------------
+@import "bootstrap/scss/bootstrap";
+$primary-color: #1f70ff;
+$tint-color: #8fb8ff;
+$shades-color: #030b19;
+$font-stack: "mulish-400", sans-serif;
+$fade-in-duration: 1s; // Durasi animasi fade-in
+$border-roundness: 50px;
+
+//font
+@font-face {
+  font-family: "mulish-400";
+  src: url("../assets/fonts/Mulish/Mulish-Regular.ttf");
+}
+@font-face {
+  font-family: "mulish-500";
+  src: url("../assets/fonts/Mulish/Mulish-Medium.ttf");
+}
+@font-face {
+  font-family: "mulish-600";
+  src: url("../assets/fonts/Mulish/Mulish-SemiBold.ttf");
+}
+@font-face {
+  font-family: "mulish-700";
+  src: url("../assets/fonts/Mulish/Mulish-Bold.ttf");
+}
+.mulish-400 {
+  font-family: "mulish-400", sans-serif;
+}
+.mulish-500 {
+  font-family: "mulish-500", sans-serif;
+}
+.mulish-600 {
+  font-family: "mulish-600", sans-serif;
+}
+.mulish-700 {
+  font-family: "mulish-700", sans-serif;
+}
+
+// Reset/Normalize (Opsional)
+// --------------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+//===================
+//==== Animation ====
+//===================
+
+// Base Styles
+// --------------------
+body {
+  font-family: $font-stack;
+  color: $primary-color;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.61) 50%,
+      rgba(0, 0, 0, 0.568) 100%
+    ),
+    url("../assets/images/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+// ===============================
+// ===== general components ======
+
+.btn-primary {
+  cursor: pointer;
+  border: none;
+  background-color: $primary-color;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 2.5rem;
+  align-self: center;
+  transition: ease-in 0.3s;
+  &:hover,
+  &:active {
+    background-color: $tint-color;
+  }
+}
+
+.btn-secondary {
+  cursor: pointer;
+  border: none;
+  border-radius: $border-roundness;
+  padding: 1.5rem 8rem;
+  font-size: 2.5rem;
+  background-color: transparent;
+  transition: ease-in 0.3s;
+  box-shadow: inset 0 0 0 3px $tint-color;
+  &:hover,
+  &:active {
+    background-color: $tint-color;
+    color: #fff;
+  }
+}
+
+.btn-sm {
+  padding: 1.5rem 3rem;
+}
+
+//===================
+//==== Header =====
+//===================
+header {
+  margin-top: 20px;
+  a {
+    text-decoration: none;
+    &:link,
+    &:visited {
+      color: $shades-color;
+      transition: ease-in 0.3s;
+    }
+    &:hover,
+    &:active {
+      color: $tint-color;
+    }
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  font-size: 2.5rem;
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 10rem;
+  }
+  .navbar {
+    .navbar-list {
+      list-style: none;
+      display: flex;
+      gap: 5rem;
+      align-items: center;
+
+      li {
+        letter-spacing: 0.25rem;
+      }
+    }
+  }
+
+  .btn-secondary {
+    padding: 2rem 7rem;
+  }
+}
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+  display: none; // Hidden by default
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 4px;
+    width: 35px;
+    background: $shades-color;
+    border-radius: 10px;
+  }
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; // Start off the screen
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease-in-out;
+}
+
+/* Show sidebar */
+.show-sidebar {
+  left: 0; // Bring onto the screen
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; // Show the hamburger menu on smaller screens
+  }
+  header .navbar {
+    display: none;
+  }
+  .logo .home {
+    display: none;
+  }
+  .sidebar {
+    display: flex; // Ensure sidebar is ready to display
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+
+//===================
+//==== Hero =====
+//===================
+.hero-section {
+  height: 100vh;
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  padding: 3rem 20rem 0;
+}
+.call-to-action {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-weight: 700;
+    font-size: 5rem;
+    margin-bottom: 5rem;
+    line-height: 1.3;
+    letter-spacing: 0.2rem;
+  }
+  .description {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    color: $shades-color;
+    font-weight: 400;
+    margin-bottom: 5rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+  .customers {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .customer-img img {
+    height: 4.8em;
+    width: 4.8rem;
+    border-radius: 50%;
+    margin-right: -1.6rem;
+    border: 3px solid #fdf2e9;
+    transition: transform 0.3s ease; // Menambahkan transisi untuk efek halus
+
+    &:hover {
+      transform: translateY(-10px); // Menggerakkan gambar ke atas saat di-hover
+    }
+  }
+
+  .customer-img img:last-child {
+    margin: 0;
+  }
+
+  .delivered_text {
+    span {
+      color: $primary-color;
+      font-weight: 800;
+      font-size: 2rem;
+    }
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $shades-color;
+  }
+}
+
+.hero-images {
+  position: relative;
+  img {
+    position: absolute;
+    max-width: 40%;
+    max-height: 100%;
+    transition: transform 0.3s ease; // Menambahkan transisi untuk animasi
+  }
+  max-height: max-content;
+  .img-1 {
+    transform: translate(-50%, -50%);
+    top: 35%;
+    left: 50%;
+    max-width: 50%;
+
+    &:hover {
+      transform: translate(-50%, -60%); // Bergerak ke atas saat di-hover
+    }
+  }
+  .img-2 {
+    transform: translate(-50%, -50%);
+    top: 44%;
+    left: 74%;
+
+    &:hover {
+      transform: translate(-40%, -50%); // Bergerak ke kanan saat di-hover
+    }
+  }
+  .img-3 {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 23%;
+
+    &:hover {
+      transform: translate(-60%, -50%); // Bergerak ke kiri saat di-hover
+    }
+  }
+}
