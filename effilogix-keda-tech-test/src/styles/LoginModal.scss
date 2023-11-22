@@ -1,6 +1,8 @@
-// File: LoginModal.scss
+// Import Bootstrap functions for color manipulation, if needed
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
 
-// File: LoginModal.scss
 @keyframes flipInX {
   from {
     transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
@@ -27,17 +29,30 @@
   }
 }
 
-.modal-content {
-  animation-name: flipInX;
-  animation-duration: 0.75s;
+// Custom modal styling
+.modal-dialog {
+  // Adjust the max-width to control the modal's width
+  max-width: 500px; // Example width, adjust as needed
+
+  .modal-content {
+    // Set the desired padding and potentially border-radius
+    padding: 2rem;
+    border-radius: 0.5rem; // Example radius, adjust as needed
+
+    // Optional: Set a box-shadow for a "pop-out" effect
+    @include box-shadow(0 5px 15px rgba($black, 0.3));
+  }
 }
 
-.text-center {
-  a {
-    color: #007bff; // Warna ini untuk meniru tampilan link Bootstrap, sesuaikan sesuai keinginan.
-    cursor: pointer;
-    &:hover {
-      text-decoration: underline;
-    }
+// For a full-width modal on smaller screens
+@media (max-width: 576px) {
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0.5rem;
+  }
+
+  .modal-content {
+    // Adjust the border-radius and padding for smaller screens
+    border-radius: 0.25rem;
   }
 }

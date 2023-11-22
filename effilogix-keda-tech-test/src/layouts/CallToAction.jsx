@@ -6,13 +6,17 @@ import image5 from "../assets/images/customers/customer-5.jpg";
 import image6 from "../assets/images/customers/customer-6.jpg";
 import Button from "../components/general/Button";
 import useNumberAnimation from "../hooks/useNumberAnimation";
+import useTypingAnimation from "../hooks/typingAnimation";
 function CallToAction() {
   useNumberAnimation(0, 250000, 7000, "customer-count");
+  const headerText =
+    "  Revolutionizing Inventory and Profit Tracking for Today's Entrepreneurs";
+  const { typedText } = useTypingAnimation(headerText);
   return (
     <div className="call-to-action">
       <h1>
-        Streamlining Success - Revolutionizing Inventory and Profit Tracking for
-        Today&apos;s Entrepreneurs.
+        {typedText}
+        <span className="typing-cursor">|</span>
       </h1>
       <p className="description">
         Our startup has developed a website resembling an ERP system, tailored

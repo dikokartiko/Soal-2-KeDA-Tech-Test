@@ -2,24 +2,30 @@ import logo from "../assets/images/logo.png";
 import Button from "../components/general/Button";
 
 import { useState } from "react";
-function Header({ onLoginClick }) {
+// eslint-disable-next-line react/prop-types
+function Header({ onLoginClick, onAboutClick, isSticky }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
   return (
-    <header className="mulish-700">
+    <header className={`mulish-700 ${isSticky ? "sticky-header" : ""}`}>
       <div className="hamburger-menu" onClick={toggleSidebar}>
         <span></span>
         <span></span>
         <span></span>
       </div>
+
       <div className={`sidebar ${sidebarOpen ? "show-sidebar" : ""}`}>
+        {/* Close button */}
+        <button className="close-btn" onClick={() => setSidebarOpen(false)}>
+          X
+        </button>
         <a href="#" onClick={() => setSidebarOpen(false)}>
           HOME
         </a>
-        <a href="#" onClick={() => setSidebarOpen(false)}>
+        <a href="#about-us" onClick={() => setSidebarOpen(false)}>
           ABOUT
         </a>
         <a href="#" onClick={() => setSidebarOpen(false)}>
@@ -48,13 +54,15 @@ function Header({ onLoginClick }) {
       <nav className="navbar">
         <ul className="navbar-list">
           <li>
-            <a href="#">ABOUT</a>
+            <a href="#about-us">ABOUT</a>
           </li>
           <li>
             <a href="#">PRICING</a>
           </li>
           <li>
-            <a href="#">CONTACT</a>
+            <a href="#" onClick={onAboutClick}>
+              CONTACT
+            </a>
           </li>
           <li>
             <Button name={"Login"} style={"secondary"} onClick={onLoginClick} />
