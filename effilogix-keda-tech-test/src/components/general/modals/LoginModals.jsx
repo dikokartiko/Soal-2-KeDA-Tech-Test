@@ -29,7 +29,7 @@ const LoginModal = ({ show, handleClose, handleRegister }) => {
           </Form.Group>
 
           {/* Tombol untuk submit form */}
-          <Button variant="primary" type="submit" className="w-100">
+          <Button variant="primary" type="submit" className="mt-4 w-100">
             Login
           </Button>
 

@@ -40,7 +40,7 @@ const App = () => {
           isSticky={isSticky}
         />
         <LoginModal show={showLoginModal} handleClose={toggleLoginModal} />
-        <Hero onRegisterClick={toggleRegisterModal} />
+        <Hero onRegisterClick={toggleRegisterModal} onAboutClick={handleAboutClick}/>
         <RegisterModal
           show={showRegisterModal}
           handleClose={toggleRegisterModal}

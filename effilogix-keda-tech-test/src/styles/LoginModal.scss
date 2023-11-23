@@ -36,11 +36,40 @@
 
   .modal-content {
     // Set the desired padding and potentially border-radius
-    padding: 2rem;
+    padding: 0;
     border-radius: 0.5rem; // Example radius, adjust as needed
 
     // Optional: Set a box-shadow for a "pop-out" effect
     @include box-shadow(0 5px 15px rgba($black, 0.3));
+
+    .modal-header{
+      padding: 15px;
+    }
+
+    .modal-title{
+      font-size: 26px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .btn-close{
+      padding: 0;
+      margin: 0;
+      font-size: 15px;
+      padding-right: 20px;
+    }
+
+    .modal-body{
+      padding: 25px;
+
+      .form-control{
+        font-size: 16px;
+      }
+
+      button, span, a, label{
+        font-size: 18px;
+      }
+    }
   }
 }
 

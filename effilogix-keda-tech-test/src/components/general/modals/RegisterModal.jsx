@@ -47,7 +47,7 @@ const RegisterModal = ({ show, handleClose, handleLogin }) => {
           </Form.Group>
 
           {/* Button to submit the form */}
-          <Button variant="primary" type="submit" className="w-100">
+          <Button variant="primary" type="submit" className="mt-4 w-100">
             Register
           </Button>
 

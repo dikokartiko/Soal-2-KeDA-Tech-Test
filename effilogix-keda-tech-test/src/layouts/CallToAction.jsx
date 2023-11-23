@@ -7,7 +7,7 @@ import image6 from "../assets/images/customers/customer-6.jpg";
 import Button from "../components/general/Button";
 import useNumberAnimation from "../hooks/useNumberAnimation";
 import useTypingAnimation from "../hooks/typingAnimation";
-function CallToAction({ onRegisterClick }) {
+function CallToAction({ onRegisterClick, onAboutClick }) {
   useNumberAnimation(0, 250000, 7000, "customer-count");
   const headerText =
     "  Revolutionizing Inventory and Profit Tracking for Today's Entrepreneurs";
@@ -33,7 +33,9 @@ function CallToAction({ onRegisterClick }) {
           size={"sm"}
           onClick={onRegisterClick}
         />
-        <Button name={"Learn More ⬇️"} style={"secondary"} size={"sm"} />
+        <a href="#about" onClick={onAboutClick}>
+          <Button name={"Learn More ⬇️"} style={"secondary"} size={"sm"} />
+        </a>
       </div>
       <div className="customers">
         <div className="customer-img">
