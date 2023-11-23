@@ -1,0 +1,53 @@
+@import "../base/animation.scss";
+@import "../base/mixins.scss";
+
+#about-us {
+    width: calc(100% - 200px);
+    margin: auto;
+
+    @include respond-max(sm-tablet) {
+        width: 90%;
+    }
+
+    .grid-about {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        gap: 50px;
+        align-items: center;
+
+        @include respond-max(md-dekstop) {
+            display: block;
+        }
+
+        .about-us-logo{
+            img{
+                width: 75%;
+                margin: auto;
+                display: block;
+
+                @media screen and (max-width: 1500px) {
+                    width: 85%;
+                }
+
+                @include respond-max(lg-dekstop) {
+                    width: 100%;
+                }
+
+                @include respond-max(md-dekstop) {
+                    display: none;
+                }
+            }
+        }
+
+        .about-us-description{
+            background-color: #fff;
+            padding: 40px;
+            p{
+                font-size: 18px;
+                text-align: center;
+                word-break: break-word;
+                line-height: 1.7em;
+            }
+        }
+    }
+}

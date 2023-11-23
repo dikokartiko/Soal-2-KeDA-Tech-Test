@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file contains all colors styles and breakpoints.
+// -----------------------------------------------------------------------------
+
+///start : main brand color
+$primary-color: #1f70ff;
+$tint-color: #8fb8ff;
+$shades-color: #030b19;
+$fade-in-duration: 1s; // Durasi animasi fade-in
+$border-roundness: 50px;
+///end : main brand color
+
+// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'lg-dekstop': 1399px,
+  'md-dekstop': 1200px,
+  'lg-tablet': 991px,
+  'md-tablet': 768px,
+  'sm-tablet': 767px,
+  'lg-mobile': 575px,
+) !default;

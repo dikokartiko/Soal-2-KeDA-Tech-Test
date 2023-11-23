@@ -1,4 +1,3 @@
-import "../stylesheets/layouts/footer.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -11,25 +10,35 @@ function Footer() {
       <Container>
         <Row className="content">
           <Col>
-            <Row className="right-footer">
-              <Col md="auto">
+            <div className="grid-footer-logo">
+              <div>
                 <img src={logo} alt="Effilogix logo" height={"100%"} />
-              </Col>
-              <Col md="auto">
+              </div>
+              <div>
                 <h2 className="mb-0">EffiLogix</h2>
-              </Col>
-            </Row>
+              </div>
+            </div>
           </Col>
-          <Col md={{ span: 4, offset: 4 }}>
-            <Row className="float-end">
+          <Col>
+            <div className="grid-footer">
               {Object(menu).map((item, i) => {
                 return (
-                  <Col md="auto" key={i}>
-                    <a className="mb-0">{item.name}</a>
-                  </Col>
+                  <a
+                    key={i}
+                    href={
+                      item.name === "Pricing"
+                        ? "#pricing"
+                        : item.name === "Contact"
+                        ? "#contact"
+                        : item.name === "About"
+                        ? "#about-us"
+                        : ""
+                    }>
+                    <button className="btn button-footer">{item.name}</button>
+                  </a>
                 );
               })}
-            </Row>
+            </div>
           </Col>
         </Row>
       </Container>

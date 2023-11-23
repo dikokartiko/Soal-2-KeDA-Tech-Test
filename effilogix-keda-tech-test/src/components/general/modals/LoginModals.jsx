@@ -1,8 +1,5 @@
 /* eslint-disable react/prop-types */
-// File: LoginModal.jsx
-
 import { Modal, Button, Form } from "react-bootstrap";
-import "../../../stylesheets/components/modal.scss";
 
 const LoginModal = ({ show, handleClose, handleRegister }) => {
   const handleSubmit = (event) => {

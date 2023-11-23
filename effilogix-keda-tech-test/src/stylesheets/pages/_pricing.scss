@@ -1,0 +1,84 @@
+@import "../base/animation.scss";
+@import "../base/mixins.scss";
+
+// .pricing-section {
+//   height: 100vh;
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 2rem;
+
+//   .border-radius {
+//     border-radius: 1rem;
+//   }
+
+//   .flex {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1rem;
+//   }
+// }
+
+.popular-card {
+  border-color: #007bff; // Or any other styling you want for popular cards
+}
+
+.popular-badge {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dc3545; // Bootstrap's danger or any color you prefer
+  border-radius: 0.25rem;
+  z-index: 1; // Ensure it's above other elements
+}
+
+// Apply the animation on hover
+.hover-bounce:hover {
+  animation: fade-in 0.5s ease;
+  transform: scale(
+    1.05
+  ); // Define the scale factor according to the bounce effect you want
+}
+
+// Assuming .pricing-card is the class for your pricing card
+.pricing-card {
+  margin-bottom: 2rem; // Add more space below the pricing card
+}
+
+.grid-service {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  
+  @include respond-max(lg-tablet) {
+    display: block;
+
+    .item-grid{
+      margin: 30px auto;
+    }
+  }
+
+  .item-grid {
+    height: 100%;
+
+    p {
+      font-size: 16px;
+      line-height: 1.2em;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    button {
+      font-size: 15px;
+      padding: 6px 20px;
+    }
+  }
+}

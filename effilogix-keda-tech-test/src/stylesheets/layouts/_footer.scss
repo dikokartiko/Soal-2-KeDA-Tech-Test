@@ -1,0 +1,61 @@
+@import "../base/animation.scss";
+@import "../base/mixins.scss";
+
+.footer-sec{
+    background: linear-gradient(31deg, rgb(34, 108, 221) 41%, rgb(84, 122, 217) 66%, rgb(130, 138, 210) 78%, rgb(182, 148, 201) 100%);
+
+    img{
+        width: 100px;
+    }
+
+    .content{
+        align-items: center;
+
+        @include respond-max(sm-tablet) {
+            padding: 20px;
+            text-align: center;
+            display: block;
+        }
+
+        .grid-footer-logo{
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 100px 150px;
+            align-items: center;
+
+            @include respond-max(sm-tablet) {
+                display: none;
+            }
+        }
+
+        .grid-footer{
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(3, minmax(auto, 1fr));
+            float: right;
+
+            .button-footer{
+                margin-bottom: 0;
+                color: #fff;
+                font-size: 16px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            @include respond-max(sm-tablet) {
+                float: unset;
+                display: inline-block;
+
+                .button-footer{
+                    padding: 0 10px;
+                }
+            }
+        }
+        
+        h2{
+            font-size: 35px;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@import "../base/variable.scss";
+@import "../base/mixins.scss";
+
+header {
+  a {
+    text-decoration: none;
+    &:link,
+    &:visited {
+      color: $shades-color;
+      transition: ease-in 0.3s;
+    }
+    &:hover,
+    &:active {
+      color: $tint-color;
+    }
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  padding-top: 20px;
+  font-size: 2.5rem;
+
+  @include respond-max(lg-tablet) {
+    padding: 20px;
+    padding-bottom: 0 !important;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 10rem;
+
+    .home {
+      @include respond-max(sm-tablet) {
+        display: none;
+      }
+    }
+  }
+  .navbar {
+    @include respond-max(sm-tablet) {
+      display: none;
+    }
+    .navbar-list {
+      list-style: none;
+      display: flex;
+      gap: 5rem;
+      align-items: center;
+      @include respond-max(lg-tablet) {
+        gap: 20px;
+      }
+    }
+  }
+
+  .btn-secondary {
+    padding: 15px 50px;
+    @include respond-max(lg-tablet) {
+      padding: 10px 40px;
+    }
+  }
+}
+
+.sticky-header {
+  position: fixed;
+  top: -20px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000; // High z-index to ensure the header is above other content
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Optional shadow for better visibility
+  transition: background-color 0.3s; // Smooth transition for the background color
+
+  a {
+    color: $primary-color; // Update color to maintain contrast against the white background
+  }
+}

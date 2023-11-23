@@ -1,6 +1,6 @@
 import ContactInfo from "../components/general/ContactInfo";
 import ContactForm from "../components/general/ContactForm";
-import "../stylesheets/pages/contact.scss";
+
 const ContactUs = () => {
   return (
     <section id="contact" className="contact-us section-cnt">

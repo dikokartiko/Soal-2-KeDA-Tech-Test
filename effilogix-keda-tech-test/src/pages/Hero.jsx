@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import CallToAction from "../layouts/CallToAction";
 import HeroImages from "../layouts/HeroImages";
-import "../stylesheets/pages/hero.scss";
+
 function Hero({ onRegisterClick, onAboutClick }) {
   return (
-    <section className="hero-section">
+    <section className="hero-section section-cnt">
       <CallToAction
         onRegisterClick={onRegisterClick}
         onAboutClick={onAboutClick}

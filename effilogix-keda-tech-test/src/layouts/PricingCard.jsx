@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { Card, Button, Container } from "react-bootstrap";
-import "../stylesheets/components/service.scss";
 
 const PricingCard = ({ tier, features, isPopular }) => {
   return (
@@ -71,7 +70,7 @@ const Pricing = () => {
   const popularTierIndex = 1;
 
   return (
-    <Container className="p-5 border-radius">
+    <Container>
       <h1 className="main-title text-center">Our Services</h1>
       <div className="justify-content-center grid-service">
         {tiers.map((tier, index) => (

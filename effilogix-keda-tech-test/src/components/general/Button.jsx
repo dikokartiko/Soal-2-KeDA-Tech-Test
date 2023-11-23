@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-import "../../stylesheets/components/button.scss";
-import "../../stylesheets/base/fonts.scss";
+
 function Button({ name, style, size, onClick }) {
   Button.propTypes = {
     name: PropTypes.string.isRequired,

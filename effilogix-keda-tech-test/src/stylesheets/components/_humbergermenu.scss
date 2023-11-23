@@ -1,0 +1,20 @@
+@import "../base/variable.scss";
+@import "../base/mixins.scss";
+
+.hamburger-menu {
+    display: none; // Hidden by default
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    @include respond-max(sm-tablet) {
+      display: flex;
+    }
+  
+    span {
+      display: block;
+      height: 4px;
+      width: 35px;
+      background: $shades-color;
+      border-radius: 10px;
+    }
+  }

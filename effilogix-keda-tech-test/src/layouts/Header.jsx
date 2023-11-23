@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
 import logo from "../assets/images/logo.png";
 import Button from "../components/general/Button";
-import "../stylesheets/layouts/header.scss";
-import "../stylesheets/base/fonts.scss";
 import { useState } from "react";
 
 function Header({
@@ -29,7 +27,6 @@ function Header({
         className={`sidebar ${sidebarOpen ? "show-sidebar" : ""} ${
           sidebarOpen ? "sidebar-open" : ""
         }`}>
-        {/* Close button */}
         <button className="close-btn" onClick={() => setSidebarOpen(false)}>
           X
         </button>
