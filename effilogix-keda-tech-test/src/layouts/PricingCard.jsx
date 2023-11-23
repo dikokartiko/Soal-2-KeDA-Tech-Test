@@ -1,5 +1,6 @@
-import { Card, Button, Container, Row, Col } from "react-bootstrap";
-import "../styles/Service.scss";
+/* eslint-disable react/prop-types */
+import { Card, Button, Container } from "react-bootstrap";
+import "../stylesheets/components/service.scss";
 
 const PricingCard = ({ tier, features, isPopular }) => {
   return (

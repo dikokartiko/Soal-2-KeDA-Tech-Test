@@ -1,0 +1,69 @@
+.pricing-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  .border-radius {
+    border-radius: 1rem;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.popular-card {
+  border-color: #007bff; // Or any other styling you want for popular cards
+}
+
+.popular-badge {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dc3545; // Bootstrap's danger or any color you prefer
+  border-radius: 0.25rem;
+  z-index: 1; // Ensure it's above other elements
+}
+
+// Define the keyframes for the bounce effect
+@keyframes bounce-in {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Apply the animation on hover
+.hover-bounce:hover {
+  animation: fade-in 0.5s ease;
+  transform: scale(
+    1.05
+  ); // Define the scale factor according to the bounce effect you want
+}
+
+// Assuming .pricing-card is the class for your pricing card
+.pricing-card {
+  margin-bottom: 2rem; // Add more space below the pricing card
+}
+
+.main-title {
+  font-size: 40px !important;
+  font-weight: bold !important;
+  margin-bottom: 45px !important;
+  padding-top: 25px !important;
+}
+
+.section-cnt {
+  padding: 50px 0 150px !important;
+}

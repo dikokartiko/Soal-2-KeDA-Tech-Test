@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 // File: LoginModal.jsx
 
 import { Modal, Button, Form } from "react-bootstrap";
-import "../../.././styles/LoginModal.scss"; // Pastikan Anda telah membuat file SCSS ini
+import "../../../stylesheets/components/modal.scss";
 
 const LoginModal = ({ show, handleClose, handleRegister }) => {
   const handleSubmit = (event) => {
@@ -35,7 +36,7 @@ const LoginModal = ({ show, handleClose, handleRegister }) => {
 
           {/* Teks untuk navigasi ke pendaftaran */}
           <div className="text-center mt-3">
-            <span>Didn't have an account? </span>
+            <span>Didn&apos;t have an account? </span>
             <a href="#" onClick={handleRegister}>
               Register
             </a>

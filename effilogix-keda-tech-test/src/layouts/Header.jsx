@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import logo from "../assets/images/logo.png";
 import Button from "../components/general/Button";
-
+import "../stylesheets/layouts/header.scss";
+import "../stylesheets/base/fonts.scss";
 import { useState } from "react";
-// eslint-disable-next-line react/prop-types
+
 function Header({
   onLoginClick,
   onAboutClick,
@@ -37,10 +39,10 @@ function Header({
         <a href="#about-us" onClick={() => setSidebarOpen(false)}>
           ABOUT
         </a>
-        <a href="#" onClick={() => setSidebarOpen(false)}>
+        <a href="#pricing" onClick={() => setSidebarOpen(false)}>
           PRICING
         </a>
-        <a href="#" onClick={() => setSidebarOpen(false)}>
+        <a href="#contact" onClick={() => setSidebarOpen(false)}>
           CONTACT
         </a>
         <Button
@@ -73,7 +75,7 @@ function Header({
             </a>
           </li>
           <li>
-            <a href="#" onClick={onContactClick}>
+            <a href="#contact" onClick={onContactClick}>
               CONTACT
             </a>
           </li>

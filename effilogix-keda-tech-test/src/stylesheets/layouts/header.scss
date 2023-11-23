@@ -1,0 +1,139 @@
+@import "../base/variable.scss";
+header {
+  a {
+    text-decoration: none;
+    &:link,
+    &:visited {
+      color: $shades-color;
+      transition: ease-in 0.3s;
+    }
+    &:hover,
+    &:active {
+      color: $tint-color;
+    }
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  padding-top: 20px;
+  font-size: 2.5rem;
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 10rem;
+  }
+  .navbar {
+    .navbar-list {
+      list-style: none;
+      display: flex;
+      gap: 5rem;
+      align-items: center;
+
+      li {
+        a,
+        button {
+          letter-spacing: 0.25rem;
+          font-size: 21px;
+        }
+      }
+    }
+  }
+
+  .btn-secondary {
+    padding: 15px 50px;
+  }
+}
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+  display: none; // Hidden by default
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 4px;
+    width: 35px;
+    background: $shades-color;
+    border-radius: 10px;
+  }
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; // Start off the screen
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease-in-out;
+  z-index: 100000;
+}
+
+/* Show sidebar */
+.show-sidebar {
+  left: 0; // Bring onto the screen
+}
+
+.sidebar-open ~ .main-content {
+  // Adjust the selector based on your actual HTML structure
+  filter: blur(5rem); // Adjust the blur value as needed
+  transition: filter 0.3s ease-in-out;
+  pointer-events: none; // Disable interaction with the content while the sidebar is open
+  user-select: none; // Prevent text selection during the blur effect
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; // Show the hamburger menu on smaller screens
+  }
+  header .navbar {
+    display: none;
+  }
+  .logo .home {
+    display: none;
+  }
+  .sidebar {
+    display: flex; // Ensure sidebar is ready to display
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      border: none;
+      background: none;
+      font-size: 2rem; // Adjust as needed
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+
+.sticky-header {
+  position: fixed;
+  top: -20px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000; // High z-index to ensure the header is above other content
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Optional shadow for better visibility
+  transition: background-color 0.3s; // Smooth transition for the background color
+
+  a {
+    color: $primary-color; // Update color to maintain contrast against the white background
+  }
+}

@@ -1,7 +1,7 @@
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 import Hero from "./pages/Hero";
-import "./styles/styles.scss";
+import "./stylesheets/base/base.scss";
 import useLoginModal from "./hooks/useLoginModal";
 import useRegisterModal from "./hooks/useRegisterModal";
 import LoginModal from "./components/general/modals/LoginModals";
@@ -40,7 +40,10 @@ const App = () => {
           isSticky={isSticky}
         />
         <LoginModal show={showLoginModal} handleClose={toggleLoginModal} />
-        <Hero onRegisterClick={toggleRegisterModal} onAboutClick={handleAboutClick}/>
+        <Hero
+          onRegisterClick={toggleRegisterModal}
+          onAboutClick={handleAboutClick}
+        />
         <RegisterModal
           show={showRegisterModal}
           handleClose={toggleRegisterModal}
