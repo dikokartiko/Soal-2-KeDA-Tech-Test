@@ -78,7 +78,7 @@ function Header({
             </a>
           </li>
           <li>
-            <Button name={"Login"} style={"secondary"} onClick={onLoginClick} />
+            <Button name={"LOGIN"} style={"secondary"} onClick={onLoginClick} />
           </li>
         </ul>
       </nav>

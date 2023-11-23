@@ -7,7 +7,7 @@ import image6 from "../assets/images/customers/customer-6.jpg";
 import Button from "../components/general/Button";
 import useNumberAnimation from "../hooks/useNumberAnimation";
 import useTypingAnimation from "../hooks/typingAnimation";
-function CallToAction() {
+function CallToAction({ onRegisterClick }) {
   useNumberAnimation(0, 250000, 7000, "customer-count");
   const headerText =
     "  Revolutionizing Inventory and Profit Tracking for Today's Entrepreneurs";
@@ -27,7 +27,12 @@ function CallToAction() {
         streamline operations and focus on their core objectives.
       </p>
       <div className="cta-buttons">
-        <Button name={"Register"} style={"primary"} size={"sm"} />
+        <Button
+          name={"Register"}
+          style={"primary"}
+          size={"sm"}
+          onClick={onRegisterClick}
+        />
         <Button name={"Learn More ⬇️"} style={"secondary"} size={"sm"} />
       </div>
       <div className="customers">

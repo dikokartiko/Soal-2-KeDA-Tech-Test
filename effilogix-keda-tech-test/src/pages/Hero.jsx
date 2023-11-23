@@ -1,10 +1,10 @@
 import CallToAction from "../layouts/CallToAction";
 import HeroImages from "../layouts/HeroImages";
 
-function Hero() {
+function Hero({ onRegisterClick }) {
   return (
     <section className="hero-section">
-      <CallToAction />
+      <CallToAction onRegisterClick={onRegisterClick} />
       <HeroImages />
     </section>
   );
