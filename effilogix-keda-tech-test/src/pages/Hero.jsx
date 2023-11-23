@@ -4,7 +4,7 @@ import HeroImages from "../layouts/HeroImages";
 
 function Hero({ onRegisterClick, onAboutClick }) {
   return (
-    <section className="hero-section section-cnt">
+    <section id="hero" className="hero-section section-cnt">
       <CallToAction
         onRegisterClick={onRegisterClick}
         onAboutClick={onAboutClick}

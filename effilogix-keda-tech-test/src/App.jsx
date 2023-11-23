@@ -17,18 +17,23 @@ const App = () => {
   const [showRegisterModal, toggleRegisterModal] = useRegisterModal();
   const smoothScroll = useSmoothScroll();
   const isSticky = useStickyHeader("#startHeaderFixed");
+
   const handleAboutClick = (event) => {
     event.preventDefault();
     smoothScroll("about-us");
+    document.getElementById('about-us').style.paddingTop = "240px";
   };
   const handlePricingClick = (event) => {
     event.preventDefault();
     smoothScroll("pricing");
+    document.getElementById('pricing').style.paddingTop = "240px";
   };
   const handleContactClick = (event) => {
     event.preventDefault();
     smoothScroll("contact");
+    document.getElementById('contact').style.paddingTop = "240px";
   };
+
   return (
     <>
       <div className="body-content-custom">
