@@ -3,7 +3,13 @@ import Button from "../components/general/Button";
 
 import { useState } from "react";
 // eslint-disable-next-line react/prop-types
-function Header({ onLoginClick, onAboutClick, isSticky }) {
+function Header({
+  onLoginClick,
+  onAboutClick,
+  isSticky,
+  onPricingClick,
+  onContactClick,
+}) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -17,7 +23,10 @@ function Header({ onLoginClick, onAboutClick, isSticky }) {
         <span></span>
       </div>
 
-      <div className={`sidebar ${sidebarOpen ? "show-sidebar" : ""}`}>
+      <div
+        className={`sidebar ${sidebarOpen ? "show-sidebar" : ""} ${
+          sidebarOpen ? "sidebar-open" : ""
+        }`}>
         {/* Close button */}
         <button className="close-btn" onClick={() => setSidebarOpen(false)}>
           X
@@ -54,13 +63,17 @@ function Header({ onLoginClick, onAboutClick, isSticky }) {
       <nav className="navbar">
         <ul className="navbar-list">
           <li>
-            <a href="#about-us">ABOUT</a>
+            <a href="#about-us" onClick={onAboutClick}>
+              ABOUT
+            </a>
           </li>
           <li>
-            <a href="#">PRICING</a>
+            <a href="#pricing" onClick={onPricingClick}>
+              PRICING
+            </a>
           </li>
           <li>
-            <a href="#" onClick={onAboutClick}>
+            <a href="#" onClick={onContactClick}>
               CONTACT
             </a>
           </li>

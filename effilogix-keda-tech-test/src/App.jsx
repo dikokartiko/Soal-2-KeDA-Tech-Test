@@ -15,11 +15,21 @@ const App = () => {
     event.preventDefault();
     smoothScroll("about-us");
   };
+  const handlePricingClick = (event) => {
+    event.preventDefault();
+    smoothScroll("pricing");
+  };
+  const handleContactClick = (event) => {
+    event.preventDefault();
+    smoothScroll("contact");
+  };
   return (
     <>
       <Header
         onLoginClick={toggleLoginModal}
         onAboutClick={handleAboutClick}
+        onPricingClick={handlePricingClick}
+        onContactClick={handleContactClick}
         isSticky={isSticky}
       />
       <LoginModal show={showLoginModal} handleClose={toggleLoginModal} />

@@ -182,6 +182,7 @@ header {
   background: #fff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
   transition: left 0.3s ease-in-out;
+  z-index: 100000;
 }
 
 /* Show sidebar */
@@ -189,6 +190,13 @@ header {
   left: 0; // Bring onto the screen
 }
 
+.sidebar-open ~ .main-content {
+  // Adjust the selector based on your actual HTML structure
+  filter: blur(5rem); // Adjust the blur value as needed
+  transition: filter 0.3s ease-in-out;
+  pointer-events: none; // Disable interaction with the content while the sidebar is open
+  user-select: none; // Prevent text selection during the blur effect
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hamburger-menu {
@@ -395,6 +403,7 @@ header {
 // SCSS adjustments for smaller screens
 @media (max-width: 768px) {
   .call-to-action {
+    margin-bottom: 2rem;
     h1 {
       text-align: center;
     }
@@ -537,6 +546,7 @@ header {
     }
     p {
       margin-top: 2rem; // Add some space above the paragraph
+      line-height: 1.6;
     }
   }
 }
@@ -569,4 +579,62 @@ header {
 .hero-section {
   // other styles...
   margin-bottom: 3rem; // Add space below the hero section
+}
+
+//===================
+//==== pricing section =====
+//===================
+
+.pricing-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  .border-radius {
+    border-radius: 1rem;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.popular-card {
+  border-color: #007bff; // Or any other styling you want for popular cards
+}
+
+.popular-badge {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dc3545; // Bootstrap's danger or any color you prefer
+  border-radius: 0.25rem;
+  z-index: 1; // Ensure it's above other elements
+}
+
+// Define the keyframes for the bounce effect
+@keyframes bounce-in {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Apply the animation on hover
+.hover-bounce:hover {
+  animation: fade-in 0.5s ease;
+  transform: scale(
+    1.05
+  ); // Define the scale factor according to the bounce effect you want
 }
